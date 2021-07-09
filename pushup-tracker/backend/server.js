@@ -13,7 +13,7 @@ app.use(express.json())
 const goalSetterRouter = require("./routes/GoalSetterRouter.js")
 app.use("/goalsetter", goalSetterRouter)
 
-const goalTrackerItemRouter = require("./routes/GoalTrackerItem.js")
+const goalTrackerItemRouter = require("./routes/GoalTrackerItemRouter.js")
 app.use("/goaltrackeritem", goalTrackerItemRouter)
 
 // Server

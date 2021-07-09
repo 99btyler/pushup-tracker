@@ -14,4 +14,4 @@ const goalTrackerItemSchema = new Schema(
     }
 )
 
-module.exports = mongoose.model("GoalTrackerItem", goalTrackerItemSchema)
+module.exports = mongoose.model("goalTrackerItemSchema", goalTrackerItemSchema)
