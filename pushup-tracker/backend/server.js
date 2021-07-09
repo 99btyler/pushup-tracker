@@ -10,6 +10,9 @@ const port = process.env.PORT || 5000
 app.use(express.json())
 
 // Routes
+const goalSetterRouter = require("./routes/GoalSetterRouter.js")
+app.use("/goalsetter", goalSetterRouter)
+
 const goalTrackerItemRouter = require("./routes/GoalTrackerItem.js")
 app.use("/goaltrackeritem", goalTrackerItemRouter)
 
