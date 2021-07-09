@@ -7,8 +7,11 @@ const app = express()
 const port = process.env.PORT || 5000
 
 // Middlewares
+app.use(express.json())
 
 // Routes
+const goalTrackerItemRouter = require("./routes/GoalTrackerItem.js")
+app.use("/goaltrackeritem", goalTrackerItemRouter)
 
 // Server
 app.listen(port, () => console.log(`Server is listening on port ${port}!`))
