@@ -1,21 +1,20 @@
 import React from "react"
+import { BrowserRouter, Route } from "react-router-dom"
 
 import GoalSetter from "./components/GoalSetter.js"
-import GoalTracker from "./components/GoalTracker.js"
+import GoalTracker from "./components/GoalTracker/GoalTracker.js"
 
 class PushupTracker extends React.Component {
-
-    state = {
-        // ...
-    }
 
     render() {
         return (
 
-            <div>
-                <GoalSetter />
-                <GoalTracker />
-            </div>
+            <BrowserRouter>
+
+                <Route path="/set" component={GoalSetter} />
+                <Route path="/track" component={GoalTracker} />
+
+            </BrowserRouter>
 
         )
     }
