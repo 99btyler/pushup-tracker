@@ -6,13 +6,64 @@ import GoalTrackerItem from "./GoalTrackerItem.js"
 class GoalTracker extends React.Component {
 
     state = {
+
+        goalSetterAmount: 0,
+        goalSetterDays: 0,
+
         goalTrackerItems: []
+
     }
 
     componentDidMount() {
 
+        axios.get("http://localhost:5000/goalsetter/").then(response => {
+
+            if (response.data.length === 0) {
+                return
+            }
+
+            this.setState({
+                goalSetterAmount: response.data[0].amount,
+                goalSetterDays: response.data[0].days
+            })
+
+        })
+
         axios.get("http://localhost:5000/goaltrackeritem").then(response => {
 
+            if (this.state.goalSetterDays > response.data.length) {
+
+                // add needed GoalTrackerItems
+
+                const difference = this.state.goalSetterDays - response.data.length
+
+                for (var i = 0; i < difference; i++) {
+
+                    const newData = {
+                        day: "Day " + (response.data.length + (i+1)),
+                        amount: 0
+                    }
+
+                    axios.post("http://localhost:5000/goaltrackeritem/add", newData)
+
+                }
+
+            } else if (this.state.goalSetterDays < response.data.length) {
+
+                // remove unneeded GoalTrackerItems
+
+                const difference = response.data.length - this.state.goalSetterDays
+
+                for (var i = 0; i < difference; i++) {
+
+                    axios.delete("http://localhost:5000/goaltrackeritem/" + response.data[response.data.length-1 - i]._id)
+
+                }
+
+            }
+
+            // Finally, load GoalTrackerItems
+            
             const savedGoalTrackerItems = []
             for (var i = 0; i < response.data.length; i++) {
                 savedGoalTrackerItems.push(<GoalTrackerItem key={i} goalTrackerItemID={i} day={response.data[i].day} amount={response.data[i].amount} onChangeDay={this.onChangeDay} onChangeAmount={this.onChangeAmount} />)
@@ -29,13 +80,19 @@ class GoalTracker extends React.Component {
     render() {
         return (
 
-            <form onSubmit={this.onSubmitForm}>
+            <div>
 
-                {this.state.goalTrackerItems}
-
-                <input type="submit" value="SAVE" />
+                <p>To reach {this.state.goalSetterAmount} pushups in {this.state.goalSetterDays} days, do {this.state.goalSetterAmount / this.state.goalSetterDays} per day</p>
                 
-            </form>
+                <form onSubmit={this.onSubmitForm}>
+
+                    {this.state.goalTrackerItems}
+
+                    <input type="submit" value="SAVE" />
+
+                </form>
+
+            </div>
 
         )
     }

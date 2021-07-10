@@ -62,12 +62,12 @@ class GoalSetter extends React.Component {
             return
         }
 
-        const newData = {
-            amount: this.state.amount,
-            days: this.state.days
-        }
-
         axios.get("http://localhost:5000/goalsetter/").then(response => {
+
+            const newData = {
+                amount: this.state.amount,
+                days: this.state.days
+            }
 
             if (response.data.length === 0) {
 
