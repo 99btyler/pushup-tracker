@@ -12,13 +12,16 @@ class GoalTracker extends React.Component {
     componentDidMount() {
 
         axios.get("http://localhost:5000/goaltrackeritem").then(response => {
-            const newGoalTrackerItems = []
+
+            const savedGoalTrackerItems = []
             for (var i = 0; i < response.data.length; i++) {
-                newGoalTrackerItems.push(<GoalTrackerItem key={i} goalTrackerItemID={i} day={response.data[i].day} amount={response.data[i].amount} onChangeDay={this.onChangeDay} onChangeAmount={this.onChangeAmount} />)
+                savedGoalTrackerItems.push(<GoalTrackerItem key={i} goalTrackerItemID={i} day={response.data[i].day} amount={response.data[i].amount} onChangeDay={this.onChangeDay} onChangeAmount={this.onChangeAmount} />)
             }
+
             this.setState({
-                goalTrackerItems: newGoalTrackerItems
+                goalTrackerItems: savedGoalTrackerItems
             })
+
         })
 
     }
