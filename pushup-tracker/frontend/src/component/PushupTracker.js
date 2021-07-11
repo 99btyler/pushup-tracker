@@ -1,24 +1,24 @@
-import React from "react"
-import { BrowserRouter, Route } from "react-router-dom"
+import { BrowserRouter, Route } from "react-router-dom";
 
-import GoalSetter from "./components/GoalSetter.js"
-import GoalTracker from "./components/GoalTracker/GoalTracker.js"
+import GoalCreator from "./components/GoalCreator.js"
+import GoalEditor from "./components/GoalEditor.js"
+import GoalsViewer from "./components/GoalsViewer/GoalsViewer.js"
+import Navbar from "./components/Navbar.js"
 
-class PushupTracker extends React.Component {
+const PushupTracker = () => {
+    return (
 
-    render() {
-        return (
+        <BrowserRouter>
 
-            <BrowserRouter>
+            <Navbar />
 
-                <Route path="/set" component={GoalSetter} />
-                <Route path="/track" component={GoalTracker} />
+            <Route exact path="/" component={GoalsViewer} />
+            <Route path="/create" component={GoalCreator} />
+            <Route path="/edit/:id" component={GoalEditor} />
 
-            </BrowserRouter>
+        </BrowserRouter>
 
-        )
-    }
-
+    )
 }
 
 export default PushupTracker

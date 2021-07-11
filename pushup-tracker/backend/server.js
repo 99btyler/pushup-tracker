@@ -1,8 +1,7 @@
 const express = require("express")
 const mongoose = require("mongoose")
+require("dotenv").config()
 const cors = require("cors")
-
-require("dotenv/config")
 
 const app = express()
 const port = 5000
@@ -12,11 +11,9 @@ app.use(express.json())
 app.use(cors())
 
 // Routes
-const goalSetterRouter = require("./routes/GoalSetterRouter.js")
-app.use("/goalsetter", goalSetterRouter)
+const goals = require("./routes/Goals.js")
+app.use("/goals", goals)
 
-const goalTrackerItemRouter = require("./routes/GoalTrackerItemRouter.js")
-app.use("/goaltrackeritem", goalTrackerItemRouter)
 
 // Server
 app.listen(port, () => console.log(`Server is listening on port ${port}!`))

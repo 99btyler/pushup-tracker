@@ -1,7 +1,7 @@
 const mongoose = require("mongoose")
 const Schema = mongoose.Schema
 
-const GoalSetterSchema = new Schema(
+const GoalSchema = new Schema(
     {
         amount: {
             type: Number,
@@ -10,8 +10,12 @@ const GoalSetterSchema = new Schema(
         days: {
             type: Number,
             required: true
+        },
+        progress: {
+            type: [Number],
+            required: true
         }
     }
 )
 
-module.exports = mongoose.model("GoalSetterSchema", GoalSetterSchema)
+module.exports = mongoose.model("GoalSchema", GoalSchema)
