@@ -6,7 +6,8 @@ class UsersEditor extends React.Component {
     state = {
         username: "",
         amount: 0,
-        days: 0
+        days: 0,
+        progressData: []
     }
 
     componentDidMount() {
@@ -16,7 +17,8 @@ class UsersEditor extends React.Component {
             this.setState({
                 username: response.data.username,
                 amount: response.data.amount,
-                days: response.data.days
+                days: response.data.days,
+                progressData: response.data.progressData
             })
 
         })

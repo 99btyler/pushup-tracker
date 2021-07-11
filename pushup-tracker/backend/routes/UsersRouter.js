@@ -17,7 +17,8 @@ router.post("/add", (request, response) => {
     const newUserSchema = new UserSchema({
         username: request.body.username,
         amount: Number(request.body.amount),
-        days: Number(request.body.days)
+        days: Number(request.body.days),
+        progressData: request.body.progressData
     })
 
     newUserSchema.save().then(newData => response.json(newData)).catch(error => response.status(400).json("Error: " + error))
@@ -31,6 +32,7 @@ router.post("/edit/:id", (request, response) => {
         userSchema.username = request.body.username
         userSchema.amount = Number(request.body.amount)
         userSchema.days = Number(request.body.days)
+        userSchema.progressData = request.body.progressData
 
         userSchema.save().then(() => response.json(`UserSchema ${request.params.id} updated`)).catch(error => response.status(400).json("Error: " + error))
 

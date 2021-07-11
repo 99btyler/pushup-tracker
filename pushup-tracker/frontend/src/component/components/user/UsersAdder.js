@@ -6,7 +6,8 @@ class UsersAdder extends React.Component {
     state = {
         username: "",
         amount: 0,
-        days: 0
+        days: 0,
+        progressData: []
     }
 
     render() {
@@ -43,9 +44,17 @@ class UsersAdder extends React.Component {
     }
 
     onChangeDays = (event) => {
+
+        const progressData = []
+        for (var i = 0; i < event.target.value; i++) {
+            progressData.push(0)
+        }
+
         this.setState({
-            days: event.target.value
+            days: event.target.value,
+            progressData: progressData
         })
+
     }
 
     onSubmitForm = (event) => {
@@ -59,7 +68,8 @@ class UsersAdder extends React.Component {
         const newUser = {
             username: this.state.username.trim(),
             amount: this.state.amount,
-            days: this.state.days
+            days: this.state.days,
+            progressData: this.state.progressData
         }
 
         axios.post("http://localhost:5000/users/add", newUser).then(() => window.location = "/")

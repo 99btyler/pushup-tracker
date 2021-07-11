@@ -14,6 +14,10 @@ const UserSchema = new Schema(
         days: {
             type: Number,
             required: true
+        },
+        progressData: {
+            type: [Number],
+            required: true
         }
     }
 )
