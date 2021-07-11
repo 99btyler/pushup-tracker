@@ -11,9 +11,8 @@ app.use(express.json())
 app.use(cors())
 
 // Routes
-const goals = require("./routes/Goals.js")
-app.use("/goals", goals)
-
+const usersRouter = require("./routes/UsersRouter.js")
+app.use("/users", usersRouter)
 
 // Server
 app.listen(port, () => console.log(`Server is listening on port ${port}!`))

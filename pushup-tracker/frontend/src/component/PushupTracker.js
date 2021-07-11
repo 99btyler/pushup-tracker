@@ -1,20 +1,21 @@
-import { BrowserRouter, Route } from "react-router-dom";
+import { BrowserRouter, Route } from "react-router-dom"
 
-import GoalCreator from "./components/GoalCreator.js"
-import GoalEditor from "./components/GoalEditor.js"
-import GoalsViewer from "./components/GoalsViewer/GoalsViewer.js"
-import Navbar from "./components/Navbar.js"
+import Navigator from "./components/Navigator.js"
+import UsersAdder from "./components/user/UsersAdder.js"
+import UsersEditor from "./components/user/UsersEditor.js"
+import UsersGetter from "./components/user/UsersGetter.js"
 
 const PushupTracker = () => {
     return (
 
         <BrowserRouter>
 
-            <Navbar />
+            <Navigator />
 
-            <Route exact path="/" component={GoalsViewer} />
-            <Route path="/create" component={GoalCreator} />
-            <Route path="/edit/:id" component={GoalEditor} />
+            <Route exact path="/" component={UsersGetter} />
+            <Route path="/add" component={UsersAdder} />
+
+            <Route path="/edit/:id" component={UsersEditor} />
 
         </BrowserRouter>
 
