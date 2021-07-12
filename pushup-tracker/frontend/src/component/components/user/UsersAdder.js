@@ -61,7 +61,7 @@ class UsersAdder extends React.Component {
 
         event.preventDefault()
 
-        if (this.state.username.trim().length < 3 || this.state.amount === 0 || this.state.days === 0) {
+        if (this.state.username.trim().length === 0 || this.state.amount === 0 || this.state.days === 0) {
             return
         }
 
