@@ -12,13 +12,13 @@ class UsersGetter extends React.Component {
 
         axios.get("http://localhost:5000/users").then(response => {
 
-            const test = []
+            const savedUsersLinks = []
             for (var i = 0; i < response.data.length; i++) {
-                test.push(<Link key={i} to={"/edit/" + response.data[i]._id}><button>{response.data[i].username}</button></Link>)
+                savedUsersLinks.push(<Link key={i} to={"/edit/" + response.data[i]._id}><button>{response.data[i].username}</button></Link>)
             }
 
             this.setState({
-                usersLinks: test
+                usersLinks: savedUsersLinks
             })
 
         })
