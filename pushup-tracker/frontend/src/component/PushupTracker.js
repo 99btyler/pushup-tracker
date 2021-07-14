@@ -5,19 +5,27 @@ import UsersAdder from "./components/user/UsersAdder.js"
 import UsersEditor from "./components/user/UsersEditor.js"
 import UsersGetter from "./components/user/UsersGetter.js"
 
+import "./PushupTracker.css"
+
 const PushupTracker = () => {
     return (
 
-        <BrowserRouter>
+        <div id="pushup-tracker">
+            
+            <BrowserRouter>
+            
+                <Navigator />
 
-            <Navigator />
+                <Route exact path="/" component={UsersGetter} />
+                <Route path="/add" component={UsersAdder} />
 
-            <Route exact path="/" component={UsersGetter} />
-            <Route path="/add" component={UsersAdder} />
+                <Route path="/edit/:id" component={UsersEditor} />
 
-            <Route path="/edit/:id" component={UsersEditor} />
+            </BrowserRouter>
 
-        </BrowserRouter>
+            <div id="footer-bar" />
+
+        </div>
 
     )
 }
