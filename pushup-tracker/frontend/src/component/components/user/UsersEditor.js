@@ -1,6 +1,8 @@
 import React from "react"
 import axios from "axios"
 
+import "./UsersEditor.css"
+
 class UsersEditor extends React.Component {
 
     state = {
@@ -37,12 +39,12 @@ class UsersEditor extends React.Component {
 
         const usersEditorInputs = []
         for (var i = 0; i < this.state.progressData.length; i++) {
-            usersEditorInputs.push(<input key={i} type="text" id={i} value={this.state.progressData[i]} onChange={this.onChangeUsersEditorInput} />)
+            usersEditorInputs.push(<input key={i} type="text" id={i} value={this.state.progressData[i]} onChange={this.onChangeUsersEditorInput} autocomplete="off" />)
         }
 
         return (
 
-            <div>
+            <div id="users-editor">
 
                 <p>{this.state.username}, do {this.state.amount/this.state.days} pushups per day to reach {this.state.amount} pushups in {this.state.days} days</p>
 

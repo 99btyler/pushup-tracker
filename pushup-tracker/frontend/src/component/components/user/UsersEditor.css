@@ -1,0 +1,36 @@
+#users-editor {
+    padding: 20px;
+    font-size: 20px;
+    background-color: #ebebeb;
+}
+
+#users-editor p {
+    padding: 20px 0;
+}
+
+#users-editor input {
+    border: none;
+}
+
+#users-editor input:focus {
+    outline: none;
+}
+
+#users-editor input[type="text"] {
+    text-align: center;
+    margin-right: 5px;
+}
+
+#users-editor input[type="submit"] {
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+    border: none;
+    border: 1px solid #202020;
+    background-color: #ffffff;
+}
+
+#users-editor input[type="submit"]:hover {
+    cursor: pointer;
+    background-color: #ebebeb;
+}
