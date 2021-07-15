@@ -1,6 +1,8 @@
 import React from "react"
 import axios from "axios"
 
+import "./UsersAdder.css"
+
 class UsersAdder extends React.Component {
 
     state = {
@@ -13,16 +15,16 @@ class UsersAdder extends React.Component {
     render() {
         return (
 
-            <form onSubmit={this.onSubmitForm}>
+            <form id="users-adder" onSubmit={this.onSubmitForm}>
                 
                 <label htmlFor="username">username: </label>
-                <input type="text" id="username" value={this.state.username} onChange={this.onChangeUsername} />
+                <input type="text" id="username" value={this.state.username} onChange={this.onChangeUsername} autocomplete="off" />
 
                 <label htmlFor="amount">amount: </label>
-                <input type="text" id="amount" value={this.state.amount} onChange={this.onChangeAmount} />
+                <input type="text" id="amount" value={(this.state.amount !== 0 ? this.state.amount : "")} onChange={this.onChangeAmount} autocomplete="off" />
 
                 <label htmlFor="days">days: </label>
-                <input type="text" id="days" value={this.state.days} onChange={this.onChangeDays} />
+                <input type="text" id="days" value={(this.state.days !== 0 ? this.state.days : "")} onChange={this.onChangeDays} autocomplete="off" />
                 
                 <input type="submit" value="ADD" />
 
