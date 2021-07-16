@@ -35,7 +35,7 @@ class UsersAdder extends React.Component {
 
     onChangeUsername = (event) => {
         this.setState({
-            username: event.target.value
+            username: event.target.value.trim()
         })
     }
 
@@ -63,12 +63,12 @@ class UsersAdder extends React.Component {
 
         event.preventDefault()
 
-        if (this.state.username.trim().length === 0 || this.state.amount === 0 || this.state.days === 0) {
+        if (this.state.username.length === 0 || this.state.amount === 0 || this.state.days === 0) {
             return
         }
 
         const newUser = {
-            username: this.state.username.trim(),
+            username: this.state.username,
             amount: this.state.amount,
             days: this.state.days,
             progressData: this.state.progressData
