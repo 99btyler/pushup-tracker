@@ -55,6 +55,10 @@ class UsersEditor extends React.Component {
                     <input type="submit" value="SAVE EDIT" />
                     
                 </form>
+                
+                <hr />
+
+                <button onClick={this.onClickDeleteButton}>DELETE USER</button>
 
             </div>
 
@@ -87,6 +91,16 @@ class UsersEditor extends React.Component {
         }
 
         axios.post("http://localhost:5000/users/edit/" + this.props.match.params.id, editedUser).then(() => window.location = "/")
+
+    }
+
+    onClickDeleteButton = () => {
+
+        if (!window.confirm("Are you sure? Progress data will be erased.")) {
+            return
+        }
+
+        axios.delete("http://localhost:5000/users/delete/" + this.props.match.params.id).then(() => window.location = "/")
 
     }
 

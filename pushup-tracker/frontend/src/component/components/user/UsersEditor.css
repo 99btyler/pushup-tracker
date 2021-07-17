@@ -34,3 +34,18 @@
     cursor: pointer;
     background-color: #ebebeb;
 }
+
+#users-editor hr {
+    margin: 20px 0;
+}
+
+#users-editor button {
+    padding: 5px;
+    border: none;
+    background-color: #ff5555;
+    color: #ffffff;
+}
+
+#users-editor button:hover {
+    cursor: pointer;
+}
