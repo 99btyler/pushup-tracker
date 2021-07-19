@@ -15,16 +15,16 @@ class UsersAdder extends React.Component {
     render() {
         return (
 
-            <form id="users-adder" onSubmit={this.onSubmitForm}>
+            <form id="users-adder" onSubmit={this.onSubmitForm} autocomplete="off">
                 
                 <label htmlFor="username">username: </label>
-                <input type="text" id="username" value={this.state.username} onChange={this.onChangeUsername} autocomplete="off" />
+                <input type="text" id="username" value={this.state.username} onChange={this.onChangeUsername} />
 
                 <label htmlFor="amount">amount: </label>
-                <input type="text" id="amount" value={(this.state.amount !== 0 ? this.state.amount : "")} onChange={this.onChangeAmount} autocomplete="off" />
+                <input type="text" id="amount" value={(this.state.amount !== 0 ? this.state.amount : "")} onChange={this.onChangeAmount} />
 
                 <label htmlFor="days">days: </label>
-                <input type="text" id="days" value={(this.state.days !== 0 ? this.state.days : "")} onChange={this.onChangeDays} autocomplete="off" />
+                <input type="text" id="days" value={(this.state.days !== 0 ? this.state.days : "")} onChange={this.onChangeDays} />
                 
                 <input type="submit" value="ADD" />
 
