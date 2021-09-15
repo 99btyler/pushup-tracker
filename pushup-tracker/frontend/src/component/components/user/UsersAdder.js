@@ -7,28 +7,34 @@ class UsersAdder extends React.Component {
 
     state = {
         username: "",
-        amount: 0,
-        days: 0,
+        amount: undefined,
+        days: undefined,
         progressData: []
     }
 
     render() {
         return (
 
-            <form id="users-adder" onSubmit={this.onSubmitForm} autocomplete="off">
-                
-                <label htmlFor="username">username: </label>
-                <input type="text" id="username" value={this.state.username} onChange={this.onChangeUsername} />
+            <div id="users-adder">
 
-                <label htmlFor="amount">amount: </label>
-                <input type="text" id="amount" value={(this.state.amount !== 0 ? this.state.amount : "")} onChange={this.onChangeAmount} />
+                <h1>Add user</h1>
+                <hr />
 
-                <label htmlFor="days">days: </label>
-                <input type="text" id="days" value={(this.state.days !== 0 ? this.state.days : "")} onChange={this.onChangeDays} />
-                
-                <input type="submit" value="ADD" />
+                <div id="container">
 
-            </form>
+                    <form onSubmit={this.onSubmitForm} autoComplete="off">
+                        
+                        <input type="text" placeholder="username" value={this.state.username} onChange={this.onChangeUsername} />
+                        <input type="text" placeholder="amount" value={this.state.amount} onChange={this.onChangeAmount} />
+                        <input type="text" placeholder="days" value={this.state.days} onChange={this.onChangeDays} />
+
+                        <input type="submit" value="+" />
+                        
+                    </form>
+
+                </div>
+            
+            </div>
 
         )
     }
@@ -63,7 +69,7 @@ class UsersAdder extends React.Component {
 
         event.preventDefault()
 
-        if (this.state.username.length === 0 || this.state.amount === 0 || this.state.days === 0) {
+        if ((this.state.username.length === 0 || this.state.username.length > 36) || this.state.amount === 0 || this.state.days === 0) {
             return
         }
 

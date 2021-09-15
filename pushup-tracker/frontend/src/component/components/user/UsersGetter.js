@@ -31,7 +31,16 @@ class UsersGetter extends React.Component {
         return (
 
             <div id="users-getter">
-                {this.state.usersLinks}
+
+                <h1>Get user</h1>
+                <hr />
+
+                <div id="container">
+
+                    {this.state.usersLinks}
+                    
+                </div>
+
             </div>
 
         )

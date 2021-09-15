@@ -5,8 +5,6 @@ import UsersAdder from "./components/user/UsersAdder.js"
 import UsersEditor from "./components/user/UsersEditor.js"
 import UsersGetter from "./components/user/UsersGetter.js"
 
-import "./PushupTracker.css"
-
 const PushupTracker = () => {
     return (
 
@@ -18,12 +16,9 @@ const PushupTracker = () => {
 
                 <Route exact path="/" component={UsersGetter} />
                 <Route path="/add" component={UsersAdder} />
-
                 <Route path="/edit/:id" component={UsersEditor} />
 
             </BrowserRouter>
-
-            <div id="footer-bar" />
 
         </div>
 

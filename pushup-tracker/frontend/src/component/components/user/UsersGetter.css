@@ -1,17 +1,41 @@
-#users-getter .link {
-    text-decoration: none;
+#users-getter {
+
+    padding: 20px;
+    
+    background-color: #ffffff;
+
 }
 
-#users-getter .link button {
+#users-getter hr {
+    margin: 10px 0 20px 0;
+}
+
+#users-getter #container {
+
+    padding: 20px;
+
+    background-color: #ebebeb;
+
+}
+
+#users-getter #container .link button {
+
     width: 100%;
     padding: 20px;
-    font-size: 40px;
     border: none;
-    border-bottom: 1px solid #202020;
-    background-color: #ebebeb;
+    border-bottom: 1px solid #ebebeb;
+
+    background-color: #202020;
+    color: #ffffff;
+
+    font-size: 40px;
+
 }
 
-#users-getter .link button:hover {
+#users-getter #container .link button:hover {
+
+    background-color: #303030;
+
     cursor: pointer;
-    background-color: #dbdada;
+
 }

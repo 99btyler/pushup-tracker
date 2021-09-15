@@ -1,23 +1,26 @@
 #navigator {
-    text-align: left;
-    background-color: #202020;
-}
 
-#navigator ul {
-    list-style-type: none;
+    padding: 20px;
+    margin-bottom: 10px;
+
+    background-color: #ffffff;
+
 }
 
 #navigator ul li {
     display: inline;
-    border-right: 1px solid #ffffff;
 }
 
 #navigator ul li .link {
-    padding: 0 20px;
+
+    padding-right: 5px;
+
+    color: #202020;
+
     text-decoration: none;
-    color: white;
+
 }
 
 #navigator ul li .link:hover {
-    background-color: #505050;
+    text-decoration: underline;
 }
