@@ -1,51 +1,79 @@
 #users-editor {
+
     padding: 20px;
-    font-size: 20px;
-    background-color: #ebebeb;
-}
 
-#users-editor p {
-    padding: 20px 0;
-}
-
-#users-editor input {
-    border: none;
-}
-
-#users-editor input:focus {
-    outline: none;
-}
-
-#users-editor input[type="text"] {
-    text-align: center;
-    margin-right: 5px;
-}
-
-#users-editor input[type="submit"] {
-    width: 100%;
-    margin-top: 10px;
-    padding: 10px;
-    border: none;
-    border: 1px solid #202020;
     background-color: #ffffff;
-}
 
-#users-editor input[type="submit"]:hover {
-    cursor: pointer;
-    background-color: #ebebeb;
 }
 
 #users-editor hr {
-    margin: 20px 0;
+    margin: 10px 0 20px 0;
 }
 
-#users-editor button {
+#users-editor #container {
+    
+    padding: 20px;
+
+    background-color: #ebebeb;
+
+}
+
+#users-editor #container form {
+
+    padding: 20px;
+
+    background-color: #202020;
+    color: #ffffff;
+    
+}
+
+#users-editor #container form input[type="text"] {
+
+    display: block;
+    padding: 10px;
+    border: 1px solid #202020;
+    outline: none;
+
+    font-size: 15px;
+
+}
+
+#users-editor #container form input[type="submit"] {
+
     padding: 5px;
     border: none;
-    background-color: #ff5555;
-    color: #ffffff;
+
+    background-color: #ffffff;
+
 }
 
-#users-editor button:hover {
+#users-editor #container form input[type="submit"]:hover {
     cursor: pointer;
+}
+
+#users-editor #container-footer {
+
+    padding: 20px;
+    margin-top: 10px;
+
+    background-color: #202020;
+    color: #ffffff;
+
+}
+
+#users-editor #container-footer button {
+
+    padding: 5px;
+    border: none;
+
+    background-color: #ffffff;
+
+}
+
+#users-editor #container-footer button:hover {
+
+    background-color: red;
+
+    cursor: pointer;
+
 }

@@ -38,20 +38,26 @@ class UsersEditor extends React.Component {
 
             <div id="users-editor">
 
-                <p>{this.state.username}, do {this.state.amount/this.state.days} pushups per day to reach {this.state.amount} pushups in {this.state.days} days</p>
-
-                <form onSubmit={this.onSubmitForm} autocomplete="off">
-
-                    {usersEditorInputs}
-                    
-                    <input type="submit" value="SAVE EDIT" />
-                    
-                </form>
-                
+                <h1>Edit {this.state.username}'s progress data</h1>
                 <hr />
 
-                <button onClick={this.onClickButtonDeleteUser}>DELETE USER</button>
+                <div id="container">
 
+                    <form onSubmit={this.onSubmitForm}>
+
+                        {usersEditorInputs}
+                        <br />
+                        
+                        <input type="submit" value="SAVE EDITS" />
+
+                    </form>
+
+                    <div id="container-footer">
+                        <button onClick={this.onClickButtonDeleteUser}>DELETE USER</button>
+                    </div>
+
+                </div>
+            
             </div>
 
         )
