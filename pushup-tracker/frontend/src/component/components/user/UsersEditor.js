@@ -41,6 +41,9 @@ class UsersEditor extends React.Component {
                 <h1>Edit {this.state.username}'s progress data</h1>
                 <hr />
 
+                <p>Goal: {this.state.amount} pushups in {this.state.days} days ({(this.state.amount/this.state.days).toFixed(2)} per day)</p>
+                <br />
+
                 <div id="container">
 
                     <form onSubmit={this.onSubmitForm}>
