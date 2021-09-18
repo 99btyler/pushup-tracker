@@ -2,6 +2,7 @@ import React from "react"
 import axios from "axios"
 
 import "./UsersEditor.css"
+import UsersEditorInputRow from "./UsersEditorInputRow"
 
 class UsersEditor extends React.Component {
 
@@ -29,9 +30,9 @@ class UsersEditor extends React.Component {
 
     render() {
 
-        const usersEditorInputs = []
+        const usersEditorInputRows = []
         for (var i = 0; i < this.state.progressData.length; i++) {
-            usersEditorInputs.push(<input key={i} type="text" id={i} value={this.state.progressData[i]} onChange={this.onChangeUsersEditorInput} />)
+            usersEditorInputRows.push(<UsersEditorInputRow key={i} id={i} progressDataValue={this.state.progressData[i]} onChangeProgressDataValue={this.onChangeProgressDataValue} />)
         }
 
         return (
@@ -48,7 +49,7 @@ class UsersEditor extends React.Component {
 
                     <form onSubmit={this.onSubmitForm}>
 
-                        {usersEditorInputs}
+                        {usersEditorInputRows}
                         <br />
                         
                         <input type="submit" value="SAVE EDITS" />
@@ -66,7 +67,7 @@ class UsersEditor extends React.Component {
         )
     }
 
-    onChangeUsersEditorInput = (event) => {
+    onChangeProgressDataValue = (event) => {
 
         const progressDataCopy = [...this.state.progressData]
         progressDataCopy[event.target.id] = event.target.value

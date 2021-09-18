@@ -2,7 +2,7 @@ import { BrowserRouter, Route } from "react-router-dom"
 
 import Navigator from "./components/Navigator.js"
 import UsersAdder from "./components/user/UsersAdder.js"
-import UsersEditor from "./components/user/UsersEditor.js"
+import UsersEditor from "./components/user/edit/UsersEditor.js"
 import UsersGetter from "./components/user/UsersGetter.js"
 
 const PushupTracker = () => {
