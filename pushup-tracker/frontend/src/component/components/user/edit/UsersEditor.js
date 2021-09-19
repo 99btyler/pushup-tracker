@@ -47,7 +47,7 @@ class UsersEditor extends React.Component {
 
                 <div id="container">
 
-                    <form onSubmit={this.onSubmitForm}>
+                    <form onSubmit={this.onSubmitForm} autoComplete="off">
 
                         {usersEditorInputRows}
                         <br />
