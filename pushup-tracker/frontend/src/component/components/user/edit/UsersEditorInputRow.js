@@ -2,7 +2,10 @@
 const UsersEditorInputRow = ({ id, progressDataValue, onChangeProgressDataValue }) => {
     return (
 
-        <input key={id} type="text" id={id} value={progressDataValue} onChange={onChangeProgressDataValue} />
+        <div>
+            <label htmlFor={id}>Day {id+1}:</label>
+            <input key={id} type="text" id={id} value={progressDataValue} onChange={onChangeProgressDataValue} />
+        </div>
 
     )
 }
