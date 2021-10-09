@@ -1,5 +1,5 @@
 # pushup-tracker
-![pushup-tracker gif](https://i.imgur.com/W39hN0Y.gif)
+![pushup-tracker gif](https://i.imgur.com/wXFY6ai.gif)
 
 # Getting Started
 Get this project set up locally
